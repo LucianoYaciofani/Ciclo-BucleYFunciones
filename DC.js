@@ -15,20 +15,31 @@ let intro = "+======================+ \n\
     | Entonces,                        | \n\
     | ¿Cuál es el número secreto?      | \n\
     +======================+ ";
+let numeroSecreto;
+let entrada;
+
+/* QUIERES JUGAR CON VIDAS O SIN?  */
+function seleccionModo() {
+    modo = prompt("Ingrese '1' para jugar sin vidas o '2' para jugar con vidas: ")
+    return modo
+}
+function nroSecreto(valor) {
+    numeroSecreto = prompt("Mago, ingrese el nro secreto: ")
+    return valor
+}
 
 alert(intro);
-/* QUIERES JUGAR CON VIDAS O SIN?  */
-
-let modo = prompt("Ingrese '1' para jugar sin vidas o '2' para jugar con vidas: ")
-switch (modo) {
+nroSecreto(numeroSecreto);
+//let modo = prompt("Ingrese '1' para jugar sin vidas o '2' para jugar con vidas: ")
+switch (seleccionModo()) {
     case "1":
-        let entrada = prompt("Ingrese un numero entero o la palabra 'ESC' para salir del juego: ");
-        let numeroSecreto = 777;
+        entrada = prompt("Ingrese un numero entero o la palabra 'ESC' para salir del juego: ");
 
         while ((entrada != numeroSecreto) && (entrada != "ESC")) {
             alert("¡Ja, ja! ¡Estás atrapado en mi ciclo!");
             entrada = prompt("Ingrese un numero entero o la palabra 'ESC' para salir del juego: ");
         }
+        
         if (entrada == numeroSecreto) {
             alert(entrada);
             alert("¡Bien hecho, muggle! Eres libre ahora");
@@ -38,25 +49,29 @@ switch (modo) {
             alert("Has salido del juego.")
             break;
         }
+        break;
     case "2":
         alert("Tendras 5 vidas para encontrar el numero secreto.")
-        let numero2 = parseInt(prompt("Ingrese un numero entero: "));
-        let numeroSecreto2 = 777;
+        entrada = parseInt(prompt("Ingrese un numero entero: "));
         let vidas = 5;
+        
         while (vidas != 0) {
-            if (numero2 == numeroSecreto2) {
+
+            if (entrada == numeroSecreto) {
                 alert("¡Bien hecho, muggle! Eres libre ahora");
                 break;
             }
+
             alert("¡Ja, ja! ¡Estás atrapado en mi ciclo!");
             vidas = vidas - 1
             alert("Te quedan " + vidas + " vidas.")
+
             if (vidas == 0) {
                 alert("Has perdido, te quedaste sin vidas.")
                 break;
             }
             else {
-                numero2 = parseInt(prompt("Ingrese un numero entero: "));
+                entrada = parseInt(prompt("Ingrese un numero entero: "));
             }
         }
         break;
