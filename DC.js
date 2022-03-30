@@ -5,6 +5,8 @@ Quiere que todos los que ejecutan su programa jueguen el juego Adivina el númer
 y adivina qué número ha elegido para ellos. 
 ¡Quienes no adivinen el número quedarán atrapados en un ciclo sin fin para siempre! 
 Tendras dos formas de jugarlo, con vidas o sin vidas.
+Se agrega la nueva funcionalidad de elegir el nro secreto para el caso de
+que se quiera jugar con otra persona
 */
 
 let intro = "+======================+ \n\
@@ -23,6 +25,7 @@ function seleccionModo() {
     modo = prompt("Ingrese '1' para jugar sin vidas o '2' para jugar con vidas: ")
     return modo
 }
+//ELEGIR EL NUMERO SECRETO
 function nroSecreto(valor) {
     numeroSecreto = prompt("Mago, ingrese el nro secreto: ")
     return valor
